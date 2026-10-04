@@ -40,7 +40,7 @@ The video is re-encoded as a bare MPEG-1 video with no sound, and the audio is p
 
 ```bash
 ffmpeg -i compressed.mp4 -c:v mpeg1video -an video.m1v
-ffmpeg -i compressed.mp4 -vn audio.ogg
+ffmpeg -i compressed.mp4 -map_metadata -1 -vn audio.ogg
 ```
 
 **3. Embed both files as C headers**
