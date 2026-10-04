@@ -1,0 +1,19 @@
+# debug files
+*.txt
+data_*.h
+
+# audio and video files
+*.ogg
+*.m1v
+*.mpg
+*.mp4
+
+# compiled files
+*.o
+*.exe
+
+# test for conversion and so on
+test/
+
+# raylib
+lib/libraylib.a
