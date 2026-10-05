@@ -4,14 +4,14 @@ A tiny native **Windows app** that plays the [Bad Apple!!](https://en.wikipedia.
 
 > **This is a fan-made, non-commercial tribute project. It is not affiliated with ZUN, Team Shanghai Alice, or the original animation's creators.**
 
-I saw this as a fun little challanging project idea so I decided to make it, and it was well worth it.
+I saw this as a fun little challenging project idea so I decided to make it, and it was well worth it.
 
 ## Features
 
 - Renders behind desktop icons via the undocumented `WorkerW` reparenting trick, with a fallback for the newer Windows 11 (24H2+) desktop layout
 - Click-through and taskbar-icon-free (animated wallpaper)
 - Background rendered as fully transparent, only the black silhouette is drawn over your actual desktop wallpaper
-- Audio/video playback synced to the system audio clock to avoid drift over the full runtime on potencially slower mashines
+- Audio/video playback synced to the system audio clock to avoid drift over the full runtime on potentially slower machines
 - Hold <kbd>Esc</kbd> to close, a simple indicator on the right top of the screen
 
 ## How it works
@@ -20,7 +20,7 @@ I saw this as a fun little challanging project idea so I decided to make it, and
 2. Each pixel is thresholded at runtime: bright pixels become fully transparent, dark pixels become opaque black
 3. The resulting pixel buffer is uploaded to a raylib `Texture2D` and drawn every frame
 4. A Win32 `WorkerW`/`Progman` reparenting (in `win32_helpers.c`) moves the raylib window behind the desktop icons at startup
-5. Audio plays via raylib's music-stream API (video decoding is in sync with `GetMusicTimePlayed()` so it never drift out of sync)
+5. Audio plays via raylib's music-stream API (video decoding is in sync with `GetMusicTimePlayed()` so it never drifts out of sync)
 
 ## Building it yourself
 
@@ -57,7 +57,7 @@ xxd -i audio.ogg > data_audio.h
 **4. Compile**
 
 ```bash
-gcc -o main main.c win32_helpers.c battery.c -L./lib -I./include -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
+gcc -o main main.c win32_helpers.c -L./lib -I./include -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
 ```
 
 - `-mwindows` is used to make it a GUI app (no console)
